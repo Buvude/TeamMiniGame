@@ -295,7 +295,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3497497829298795674}
   m_Layer: 0
-  m_Name: Hallway-Corner-Junction
+  m_Name: Hallway-L-Junction
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
