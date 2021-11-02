@@ -95,6 +95,12 @@ public class FPSMovement : MonoBehaviour
                 }
             }
         }
+        {
+            if (Input.GetKey(KeyCode.Escape) || Input.GetKey(KeyCode.Return))
+            {
+                SceneManager.LoadScene(0);
+            }
+        }
     }
     public void resetAttackComplete()
     {
@@ -102,9 +108,13 @@ public class FPSMovement : MonoBehaviour
     }
     public void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("WinCondition")&&winConditionMet)
+        if (other.CompareTag("WinCondition")&&winConditionMet&& SceneManager.GetActiveScene().Equals(SceneManager.GetSceneAt(1)))
         {
-            SceneManager.LoadScene(1);
+            SceneManager.LoadScene(2);
+        }
+        else if(other.CompareTag("WinCondition") && winConditionMet && SceneManager.GetActiveScene().Equals(SceneManager.GetSceneAt(2)))
+        {
+            SceneManager.LoadScene(3);
         }
         else if (other.CompareTag("WinCondition"))
         {
