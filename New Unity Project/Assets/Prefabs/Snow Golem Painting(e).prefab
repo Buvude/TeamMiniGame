@@ -304,7 +304,7 @@ GameObject:
   - component: {fileID: 4905509828296949222}
   m_Layer: 0
   m_Name: Snow Golem Painting(e)
-  m_TagString: Untagged
+  m_TagString: EnemyIce
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -359,3 +359,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   EnemyPaintingAnimation: {fileID: -3562008184732636999}
   fps: {fileID: 0}
+  self: {fileID: 2470999427847702571}

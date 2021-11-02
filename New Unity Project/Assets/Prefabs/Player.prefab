@@ -129,6 +129,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0014e99dfb671d343b71d8a54e1adaa4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  fps: {fileID: 0}
 --- !u!1 &5796623564663673857
 GameObject:
   m_ObjectHideFlags: 0
@@ -342,13 +343,21 @@ MonoBehaviour:
   WinCondition: {fileID: 0}
   pAttackMaterial: {fileID: 0}
   pAttack: {fileID: 1544200049176958042}
+  eAttackF: {fileID: -3562008184732636999, guid: cdc9278ef0bee7f4a8eb4f0123e61abf, type: 3}
+  eAttackI: {fileID: -3562008184732636999, guid: 4569cf4e63f132b41838c3be0b1398d5, type: 3}
+  eAttackW: {fileID: -3562008184732636999, guid: b22d7d81ac42682469380b3240cd6b85, type: 3}
   PlayerAttack: {fileID: 4573313701392483039}
   ScoreKeeper: {fileID: 0}
   FireWeapon: {fileID: 0}
   FireDemon: {fileID: 0}
+  WaterWeapon: {fileID: 0}
+  Kraken: {fileID: 0}
+  IceWeapon: {fileID: 0}
+  SnowGolem: {fileID: 0}
   speed: 10
   Player: {fileID: 5796623565654800394}
   P1: {fileID: 0}
   P2: {fileID: 0}
+  WC: {fileID: 0}
   score1: 0
   score2: 0

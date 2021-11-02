@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 587814645574507268}
   m_Layer: 0
   m_Name: Cylinder
-  m_TagString: Untagged
+  m_TagString: EnemyProjectile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -61,7 +61,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 89dddfe024f50de44bec54da44f95883, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -174,7 +174,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: faf075abf712b5449b1dcaf7dc349104, type: 2}
+  - {fileID: 2100000, guid: e3eff7b71fe5b8542a51ce2fc7a82831, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -304,7 +304,7 @@ GameObject:
   - component: {fileID: 4905509828296949222}
   m_Layer: 0
   m_Name: Kraken Painting(e)
-  m_TagString: Untagged
+  m_TagString: EnemyWater
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -359,3 +359,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   EnemyPaintingAnimation: {fileID: -3562008184732636999}
   fps: {fileID: 0}
+  self: {fileID: 2470999427847702571}

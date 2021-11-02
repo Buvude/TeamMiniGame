@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657826, g: 0.49641263, b: 0.57481676, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1252,6 +1252,50 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &4075982650966756971 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4075982651919688896, guid: 038acb42eb101524a92bdf5d1ce05ed5, type: 3}
+  m_PrefabInstance: {fileID: 4075982650966756965}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &4075982650966756972 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4075982652387901777, guid: 038acb42eb101524a92bdf5d1ce05ed5, type: 3}
+  m_PrefabInstance: {fileID: 4075982650966756965}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &4075982650966756973 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4075982652412497233, guid: 038acb42eb101524a92bdf5d1ce05ed5, type: 3}
+  m_PrefabInstance: {fileID: 4075982650966756965}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &4075982650966756974 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4075982651893853586, guid: 038acb42eb101524a92bdf5d1ce05ed5, type: 3}
+  m_PrefabInstance: {fileID: 4075982650966756965}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &5796623565076232560
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1288,13 +1332,33 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 4075982650966756970}
     - target: {fileID: 5796623565654800395, guid: e3eb81cd731ba354d8b14300bae2d512, type: 3}
+      propertyPath: Kraken
+      value: 
+      objectReference: {fileID: 4075982650966756972}
+    - target: {fileID: 5796623565654800395, guid: e3eb81cd731ba354d8b14300bae2d512, type: 3}
+      propertyPath: IceGolem
+      value: 
+      objectReference: {fileID: 4075982650966756971}
+    - target: {fileID: 5796623565654800395, guid: e3eb81cd731ba354d8b14300bae2d512, type: 3}
       propertyPath: FireDemon
       value: 
       objectReference: {fileID: 4075982650966756966}
     - target: {fileID: 5796623565654800395, guid: e3eb81cd731ba354d8b14300bae2d512, type: 3}
+      propertyPath: IceWeapon
+      value: 
+      objectReference: {fileID: 4075982650966756973}
+    - target: {fileID: 5796623565654800395, guid: e3eb81cd731ba354d8b14300bae2d512, type: 3}
+      propertyPath: SnowGolem
+      value: 
+      objectReference: {fileID: 4075982650966756971}
+    - target: {fileID: 5796623565654800395, guid: e3eb81cd731ba354d8b14300bae2d512, type: 3}
       propertyPath: FireWeapon
       value: 
       objectReference: {fileID: 4075982650966756967}
+    - target: {fileID: 5796623565654800395, guid: e3eb81cd731ba354d8b14300bae2d512, type: 3}
+      propertyPath: WaterWeapon
+      value: 
+      objectReference: {fileID: 4075982650966756974}
     - target: {fileID: 5796623565654800395, guid: e3eb81cd731ba354d8b14300bae2d512, type: 3}
       propertyPath: WinCondition
       value: 

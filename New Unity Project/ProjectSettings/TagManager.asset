@@ -9,6 +9,9 @@ TagManager:
   - WinConditionWater
   - WinConditionIce
   - WinCondition
+  - EnemyFire
+  - EnemyWater
+  - EnemyIce
   layers:
   - Default
   - TransparentFX

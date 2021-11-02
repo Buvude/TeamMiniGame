@@ -8,15 +8,16 @@ public class FPSMovement : MonoBehaviour
 {
     public BoxCollider WinCondition;
     public Material pAttackMaterial;
-    public Animator pAttack;
+    public Animator pAttack,eAttackF,eAttackI,eAttackW;
     public GameObject PlayerAttack, ScoreKeeper;
     private Color FireWeaponBase, FireweaponSelected, IceWeaponBase, IceWeaponSelected, WaterWeaponBase, WaterWeaponSelected;
-    public Image FireWeapon, FireDemon;
+    private Color FireDemonBase, FireDemonSelected, SnowGolemBase, SnowgolemSelected, KrakenBase, KrakenSelected;
+    public Image FireWeapon, FireDemon,WaterWeapon,Kraken,IceWeapon,SnowGolem;
     public float speed = 10;
     private float horz, vert, straf;
     public GameObject Player;
     private int weaponSelected = 1, enemySelected = 1;
-    private bool attackComplete = true, winConditionMet = false;
+    private bool attackComplete = true, winConditionMet = false, eAttackComplete = true;
     public Text P1, P2, WC;
     public int score1 = 0, score2 = 0; 
     private int WinConditionsFire=0, WinConditionsWater=0, WinconditionsIce=0;
@@ -24,15 +25,24 @@ public class FPSMovement : MonoBehaviour
     void Start()
     {
         weaponSelected = 0;
+        enemySelected = 0;
         ScoreKeeper = GameObject.Find("ScoreKeeper");
         ScoreKeeper.GetComponent<ScoreKeeper>().setWC();
         score1 = ScoreKeeper.GetComponent<ScoreKeeper>().getP1Score();
         score2 = ScoreKeeper.GetComponent<ScoreKeeper>().getP2Score();
         Cursor.visible = false;
-        FireWeaponBase = new Color(255f, 255f, 0);
+        FireWeaponBase = new Color(255f, 255f, 255f);
+        WaterWeaponBase = new Color(255f, 255f, 255f);
+        IceWeaponBase= new Color(255f, 255f, 255f);
+        FireDemonBase= new Color(255f, 255f, 255f);
+        SnowGolemBase= new Color(255f, 255f, 255f);
+        KrakenBase= new Color(255f, 255f, 255f);
         FireweaponSelected = new Color(255, 0, 0);
         IceWeaponSelected = new Color(0, 255, 245);
         WaterWeaponSelected = new Color(0, 0, 255);
+        FireDemonSelected= new Color(255, 0, 0);
+        SnowgolemSelected=new Color(0, 255, 245);
+        KrakenSelected= new Color(0, 0, 255);
 
     }
 
@@ -62,31 +72,48 @@ public class FPSMovement : MonoBehaviour
         {
             weaponSelected = 1;
             FireWeapon.color = FireweaponSelected;
+            WaterWeapon.color = WaterWeaponBase;
+            IceWeapon.color = IceWeaponBase;
             pAttackMaterial.color = FireweaponSelected;
         }
         if (Input.GetKey(KeyCode.X) && attackComplete)
         {
             weaponSelected = 2;
             FireWeapon.color = FireWeaponBase;
+            WaterWeapon.color = WaterWeaponBase;
+            IceWeapon.color = IceWeaponSelected;
+
             pAttackMaterial.color = IceWeaponSelected;
         }
         if (Input.GetKey(KeyCode.C) && attackComplete)
         {
             weaponSelected = 3;
             FireWeapon.color = FireWeaponBase;
+            WaterWeapon.color = WaterWeaponSelected;
+            IceWeapon.color = IceWeaponBase;
+
             pAttackMaterial.color = WaterWeaponSelected;
         }
-        if (Input.GetKey(KeyCode.Keypad7))
+        if (Input.GetKey(KeyCode.Keypad7)&&ScoreKeeper.GetComponent<ScoreKeeper>().Multiplayer && eAttackComplete)
         {
             enemySelected = 1;
+            FireDemon.color = FireDemonSelected;
+            SnowGolem.color = SnowGolemBase;
+            Kraken.color = KrakenBase;
         }
-        if (Input.GetKey(KeyCode.Keypad8))
+        if (Input.GetKey(KeyCode.Keypad8) && ScoreKeeper.GetComponent<ScoreKeeper>().Multiplayer && eAttackComplete)
         {
             enemySelected = 2;
+            FireDemon.color = FireDemonBase;
+            SnowGolem.color = SnowgolemSelected;
+            Kraken.color = KrakenBase;
         }
-        if (Input.GetKey(KeyCode.Keypad9))
+        if (Input.GetKey(KeyCode.Keypad9) && ScoreKeeper.GetComponent<ScoreKeeper>().Multiplayer&&eAttackComplete)
         {
             enemySelected = 3;
+            FireDemon.color = FireDemonBase;
+            SnowGolem.color = SnowGolemBase;
+            Kraken.color = KrakenSelected;
         }
         if (Input.GetKey(KeyCode.V) && attackComplete&& weaponSelected!=0)
         {
@@ -105,11 +132,13 @@ public class FPSMovement : MonoBehaviour
                     attackComplete = false;
                     break;
             }
-            if (Input.GetKey(KeyCode.Keypad5))
+            if (Input.GetKey(KeyCode.Keypad5) && ScoreKeeper.GetComponent<ScoreKeeper>().Multiplayer && enemySelected != 0 && eAttackComplete)
             {
                 switch (enemySelected)
                 {
                     case 1:
+                        eAttackF.SetTrigger("Fired");
+                        eAttackComplete = false;
                         break;
                     case 2:
                         break;
@@ -118,17 +147,22 @@ public class FPSMovement : MonoBehaviour
                 }
             }
         }
+        
+        if (Input.GetKey(KeyCode.Escape) || Input.GetKey(KeyCode.Return))
         {
-            if (Input.GetKey(KeyCode.Escape) || Input.GetKey(KeyCode.Return))
-            {
-                SceneManager.LoadScene(0);
-            }
+            SceneManager.LoadScene(0);
         }
+        
+        
 
     }
     public void resetAttackComplete()
     {
         attackComplete = true;
+    }
+    public void resetEattackReset()
+    {
+        eAttackComplete = true;
     }
     public void OnTriggerEnter(Collider other)
     {
