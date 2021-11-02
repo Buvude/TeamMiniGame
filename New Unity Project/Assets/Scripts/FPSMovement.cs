@@ -20,6 +20,7 @@ public class FPSMovement : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        Cursor.visible = false;
         FireWeaponBase = new Color(255f, 255f, 0);
         FireweaponSelected = new Color(255, 0, 0);
         IceWeaponSelected = new Color(0, 255, 245);
