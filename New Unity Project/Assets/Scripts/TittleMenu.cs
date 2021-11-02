@@ -11,6 +11,7 @@ public class TittleMenu : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        
         activeScreen = "MS";
     }
 
@@ -22,25 +23,25 @@ public class TittleMenu : MonoBehaviour
             Application.Quit();
         }
         //for allowing the player to press the z button to exit the control menu
-        if(Input.GetKey(KeyCode.X) && activeScreen.Equals("SPCTR"))
+        if(Input.GetKey(KeyCode.Alpha1) && activeScreen.Equals("SPCTR"))
         {
             FirstScreen.gameObject.SetActive(true);
             PlayerOnecontrols.SetActive(false);
             activeScreen = "MS";
         }
-        if (Input.GetKey(KeyCode.Keypad5) && activeScreen.Equals("DPCTR"))
+        if (Input.GetKey(KeyCode.Alpha2) && activeScreen.Equals("DPCTR"))
         {
             FirstScreen.gameObject.SetActive(true);
             PlayerTwocontrols.gameObject.SetActive(false);
             activeScreen = "MS";
         }
-        if (Input.GetKey(KeyCode.C) && activeScreen.Equals("P1BE"))
+        if (Input.GetKey(KeyCode.Alpha1) && activeScreen.Equals("P1BE"))
         {
             FirstScreen.gameObject.SetActive(true);
             P1Instructions.SetActive(false);
             activeScreen = "MS";
         }
-        if (Input.GetKey(KeyCode.Keypad5) && activeScreen.Equals("P2BE"))
+        if (Input.GetKey(KeyCode.Alpha2) && activeScreen.Equals("P2BE"))
         {
             FirstScreen.gameObject.SetActive(true);
             P2Instructions.SetActive(false);

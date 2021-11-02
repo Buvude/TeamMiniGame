@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 2527115071192866432}
   - component: {fileID: 3344252099032822492}
   - component: {fileID: 8213276420693812034}
+  - component: {fileID: 587814645574507268}
   m_Layer: 0
   m_Name: Cylinder
   m_TagString: Untagged
@@ -96,6 +97,18 @@ CapsuleCollider:
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0.000000059604645, y: 0, z: -0.00000008940697}
+--- !u!114 &587814645574507268
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2094766124962039392}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b2fd5ea4d75fcaa43a8b23327f23f6b9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2470999427366731342
 GameObject:
   m_ObjectHideFlags: 0
@@ -287,6 +300,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2470999427847702572}
+  - component: {fileID: -3562008184732636999}
+  - component: {fileID: 4905509828296949222}
   m_Layer: 0
   m_Name: Fire Demon Painting(e)
   m_TagString: Untagged
@@ -311,3 +326,36 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!95 &-3562008184732636999
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2470999427847702571}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 888b25940b676c847aa3e4a2ae0bf079, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &4905509828296949222
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2470999427847702571}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 28017738b46fa844382efffd1400c416, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  EnemyPaintingAnimation: {fileID: -3562008184732636999}
+  fps: {fileID: 0}

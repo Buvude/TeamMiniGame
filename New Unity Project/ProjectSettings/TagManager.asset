@@ -4,8 +4,11 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - WinCondition
   - EnemyProjectile
+  - WinConditionFire
+  - WinConditionWater
+  - WinConditionIce
+  - WinCondition
   layers:
   - Default
   - TransparentFX

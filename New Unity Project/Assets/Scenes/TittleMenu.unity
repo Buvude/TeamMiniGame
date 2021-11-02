@@ -195,7 +195,8 @@ MonoBehaviour:
     m_LineSpacing: 1
   m_Text: 'Player Two Controls
 
-    (Press num pad 5 to return)'
+    (Press 2 on the top of the keyboard, or the two
+    player button on the arcade to return)'
 --- !u!222 &1351171
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -745,7 +746,7 @@ RectTransform:
   - {fileID: 2141472265}
   - {fileID: 2033783562}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -2059,8 +2060,8 @@ MonoBehaviour:
     attack them, and find the exit! Make sure to avoid Player 2s attacks if your
     playing multiplayer, if not watch out for the attack patterns! Try to get out
     with a higher score than your opponent!\nOn the Left are the point paintings\non
-    the right are the enemy paintings, \nbelow are the weapon paintings\nReturn c
-    with  (top right button)"
+    the right are the enemy paintings, \nbelow are the weapon paintings\n(Press 1
+    on the top of the keyboard, or the one player button on the arcade to return)"
 --- !u!222 &481206362
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2536,7 +2537,8 @@ MonoBehaviour:
     m_LineSpacing: 1
   m_Text: 'Player One controls
 
-    (Press x to return)'
+    (Press 1 on the top of the keyboard, or the one
+    player button on the arcade to return)'
 --- !u!222 &578544783
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -3687,7 +3689,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1056046009
 GameObject:
@@ -4240,8 +4242,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Self: {fileID: 1280095794}
+  Hud: {fileID: 4075982650557999454, guid: 038acb42eb101524a92bdf5d1ce05ed5, type: 3}
   Multiplayer: 0
   SinglePlayer: 0
+  P1Score: 0
+  P2Score: 0
 --- !u!1 &1347036730
 GameObject:
   m_ObjectHideFlags: 0
@@ -6386,8 +6391,8 @@ MonoBehaviour:
     one and try to get more points then them in the end! This can be done by attacking
     the Player1 with the enemy paintings! Watch out for the cooldown though!\nOn
     the Left are the point paintings\non the right are the enemy paintings, \nbelow
-    are the weapon paintings\nReturn with 5 on the number pad (Middle Bottom for
-    arcade)"
+    are the weapon paintings\n(Press 2 on the top of the keyboard, or the two player
+    button on the arcade to return)"
 --- !u!222 &2061928593
 CanvasRenderer:
   m_ObjectHideFlags: 0

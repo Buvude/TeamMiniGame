@@ -13,9 +13,10 @@ GameObject:
   - component: {fileID: 7555786828147000327}
   - component: {fileID: 7115574019870731035}
   - component: {fileID: 1544200049176958042}
+  - component: {fileID: 1724102710196110403}
   m_Layer: 0
   m_Name: Player Attack
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -91,7 +92,7 @@ CapsuleCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4573313701392483039}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   m_Radius: 0.5000001
   m_Height: 2.0000002
@@ -116,6 +117,18 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &1724102710196110403
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4573313701392483039}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0014e99dfb671d343b71d8a54e1adaa4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &5796623564663673857
 GameObject:
   m_ObjectHideFlags: 0
@@ -215,7 +228,7 @@ GameObject:
   - component: {fileID: 5796623565654800395}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -326,9 +339,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 78a2e6bf6d6481b4692554b22c901341, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  WinCondition: {fileID: 0}
+  pAttackMaterial: {fileID: 0}
   pAttack: {fileID: 1544200049176958042}
   PlayerAttack: {fileID: 4573313701392483039}
+  ScoreKeeper: {fileID: 0}
   FireWeapon: {fileID: 0}
   FireDemon: {fileID: 0}
   speed: 10
   Player: {fileID: 5796623565654800394}
+  P1: {fileID: 0}
+  P2: {fileID: 0}
+  score1: 0
+  score2: 0
