@@ -38,6 +38,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 3884214239322570087}
     m_Modifications:
+    - target: {fileID: 2470999427366731329, guid: 4569cf4e63f132b41838c3be0b1398d5, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: e644ce61d26f65c4b8055121588ba6ae, type: 2}
     - target: {fileID: 2470999427847702571, guid: 4569cf4e63f132b41838c3be0b1398d5, type: 3}
       propertyPath: m_Name
       value: Snow Golem Painting(e)

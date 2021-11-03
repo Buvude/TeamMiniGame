@@ -20,7 +20,7 @@ public class EnemyAttacks : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player"))
         {
-            fps.addpointsP2(50);
+            fps.addpointsP2(75);
         }
     }
 
