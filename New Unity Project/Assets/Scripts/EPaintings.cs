@@ -22,7 +22,7 @@ public class EPaintings : MonoBehaviour
             eAttackI.SetBool("SinglePlayer", true);*/
             selfAnimation.SetBool("SinglePlayer", true);
         }
-        fps.addEnemyPaintings(this);
+        fps.addEnemyPaintings(this.GetComponent<EPaintings>());
         /*if (self.gameObject.CompareTag("EnemyFire"))
         {
             type = 1;

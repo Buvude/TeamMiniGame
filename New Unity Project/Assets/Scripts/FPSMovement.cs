@@ -9,7 +9,9 @@ public class FPSMovement : MonoBehaviour
     public BoxCollider WinCondition;
     public Material pAttackMaterial;
     public Animator pAttack;
-    public List<EPaintings> enemyF, enemyI, enemyW;
+    public List<GameObject> enemyF = new List<GameObject>(); 
+    public List<GameObject> enemyI = new List<GameObject>();
+    public List<GameObject> enemyW = new List<GameObject>();
     public GameObject PlayerAttack, ScoreKeeper;
     private Color FireWeaponBase, FireweaponSelected, IceWeaponBase, IceWeaponSelected, WaterWeaponBase, WaterWeaponSelected;
     private Color FireDemonBase, FireDemonSelected, SnowGolemBase, SnowgolemSelected, KrakenBase, KrakenSelected;
@@ -24,10 +26,7 @@ public class FPSMovement : MonoBehaviour
     private int WinConditionsFire=0, WinConditionsWater=0, WinconditionsIce=0;
     // Start is called before the first frame update
     void Start()
-    {
-        enemyF = new List<EPaintings>();
-        enemyI = new List<EPaintings>();
-        enemyW = new List<EPaintings>(); 
+    { 
         weaponSelected = 0;
         enemySelected = 0;
         ScoreKeeper = GameObject.Find("ScoreKeeper");
@@ -136,30 +135,54 @@ public class FPSMovement : MonoBehaviour
                     attackComplete = false;
                     break;
             }
-            if (Input.GetKey(KeyCode.Keypad5) && ScoreKeeper.GetComponent<ScoreKeeper>().Multiplayer && enemySelected != 0 && eAttackComplete)
+        }
+        if (Input.GetKeyUp(KeyCode.Keypad5) && ScoreKeeper.GetComponent<ScoreKeeper>().Multiplayer && enemySelected != 0 && eAttackComplete)
+        {
+            Debug.Log("you made it this far...");
+            switch (enemySelected)
             {
-                switch (enemySelected)
-                {
-                    case 1:
-                        //eAttackF.SetTrigger("Fired");
-                        
-                        eAttackComplete = false;
-                        break;
-                    case 2:
-                        //eAttackI.SetTrigger("Fired");
-                        eAttackComplete = false;
-                        break;
-                    case 3:
-                        //eAttackW.SetTrigger("Fired");
-                        eAttackComplete = false;
-                        break;
-                }
+                case 1:
+                    //eAttackF.SetTrigger("Fired");
+                    /*for (int i = 0; i < enemyF.Count; i++)
+                    {
+                        enemyF[i].GetComponent<EPaintings>().Attack();
+                    }
+                    eAttackComplete = false;*/
+                    foreach (GameObject i in enemyF)
+                    {
+                        i.GetComponent<EPaintings>().Attack();
+                    }
+                    break;
+                case 2:
+                    //eAttackI.SetTrigger("Fired");
+                    /*for (int i = 0; i < enemyI.Count; i++)
+                    {
+                        enemyI[i].GetComponent<EPaintings>().Attack();
+                    }
+                    eAttackComplete = false;*/
+                    foreach (GameObject i in enemyI)
+                    {
+                        i.GetComponent<EPaintings>().Attack();
+                    }
+                    break;
+                case 3:
+                    //eAttackW.SetTrigger("Fired");
+                    /*for (int i = 0; i < enemyW.Count; i++)
+                    {
+                        enemyW[i].GetComponent<EPaintings>().Attack();
+                    }*/
+                    foreach (GameObject i in enemyW)
+                    {
+                        i.GetComponent<EPaintings>().Attack();
+                    }
+                    eAttackComplete = false;
+                    break;
             }
         }
-        
+
         if (Input.GetKey(KeyCode.Escape) || Input.GetKey(KeyCode.Return))
         {
-            SceneManager.LoadScene(0);
+            Application.Quit();
         }
         
         
@@ -175,12 +198,12 @@ public class FPSMovement : MonoBehaviour
     }
     public void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("WinCondition") && winConditionMet && SceneManager.GetActiveScene().Equals(SceneManager.GetSceneAt(1)))
+        if (other.CompareTag("WinCondition") && winConditionMet && SceneManager.GetActiveScene().Equals(SceneManager.GetSceneByBuildIndex(1)))
         {
             ScoreKeeper.GetComponent<ScoreKeeper>().MoveToNextScene(score1, score2);
             SceneManager.LoadScene(2);
         }
-        else if (other.CompareTag("WinCondition") && winConditionMet && SceneManager.GetActiveScene().Equals(SceneManager.GetSceneAt(2)))
+        else if (other.CompareTag("WinCondition") && winConditionMet && SceneManager.GetActiveScene().Equals(SceneManager.GetSceneByBuildIndex(2)))
         {
             SceneManager.LoadScene(3);
         }
@@ -221,17 +244,20 @@ public class FPSMovement : MonoBehaviour
     }
     public void addEnemyPaintings(EPaintings epaint)
     {
-        if (epaint.CompareTag("EnemyFire"))
+        if (epaint.self.CompareTag("EnemyFire"))
         {
-            enemyF.Add(epaint.GetComponent<EPaintings>());
+            //Debug.Log("One fire enemy should be added");
+            enemyF.Add(epaint.self);
         }
         else if (epaint.CompareTag("EnemyIce"))
         {
-            enemyI.Add(epaint.GetComponent<EPaintings>());
+            //Debug.Log("One ice enemy should be added");
+            enemyI.Add(epaint.self);
         }
         else if (epaint.CompareTag("EnemyWater"))
         {
-            enemyW.Add(epaint.GetComponent<EPaintings>());
+           //Debug.Log("One Water enemy should be added");
+            enemyW.Add(epaint.self);
         }
     }
     

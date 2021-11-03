@@ -24,5 +24,17 @@ public class PlayerAttack : MonoBehaviour
             other.gameObject.SetActive(false);
             fps.FireDown();
         }
+        else if (other.gameObject.CompareTag("WinConditionIce") && fps.getWeaponSelected() == 1)
+        {
+            fps.addpointsP1(100);
+            other.gameObject.SetActive(false);
+            fps.IceDown();
+        }
+        else if (other.gameObject.CompareTag("WinConditionWater") && fps.getWeaponSelected() == 2)
+        {
+            fps.addpointsP1(100);
+            other.gameObject.SetActive(false);
+            fps.WaterDown();
+        }
     }
 }

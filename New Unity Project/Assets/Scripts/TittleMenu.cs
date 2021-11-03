@@ -11,7 +11,8 @@ public class TittleMenu : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        score.Multiplayer = false;
+        score.SinglePlayer = false;
         activeScreen = "MS";
     }
 
