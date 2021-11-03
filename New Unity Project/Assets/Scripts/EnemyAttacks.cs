@@ -23,4 +23,5 @@ public class EnemyAttacks : MonoBehaviour
             fps.addpointsP2(50);
         }
     }
+
 }

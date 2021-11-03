@@ -5,10 +5,11 @@ using UnityEngine.Animations;
 
 public class EPaintings : MonoBehaviour
 {
-    public Animator EnemyPaintingAnimation;
+    //public Animator eAttackF, eAttackI, eAttackW;
+    public Animator selfAnimation;
     public FPSMovement fps;
     public GameObject self;
-    private int type;
+    //private int type;
 
     // Start is called before the first frame update
     void Start()
@@ -16,20 +17,27 @@ public class EPaintings : MonoBehaviour
         fps = GameObject.Find("Player").GetComponent<FPSMovement>();
         if (GameObject.Find("ScoreKeeper").GetComponent<ScoreKeeper>().SinglePlayer)
         {
-            EnemyPaintingAnimation.SetBool("SinglePlayer", true);
+            /*eAttackF.SetBool("SinglePlayer", true);
+            eAttackW.SetBool("SinglePlayer", true);
+            eAttackI.SetBool("SinglePlayer", true);*/
+            selfAnimation.SetBool("SinglePlayer", true);
         }
-        if (self.gameObject.CompareTag("EnemyFire"))
+        fps.addEnemyPaintings(this);
+        /*if (self.gameObject.CompareTag("EnemyFire"))
         {
             type = 1;
+            //fps.addEnemyPaintings(this);
         }
         else if (self.gameObject.CompareTag("EnemyIce"))
         {
             type = 2;
+            //fps.addEnemyPaintings(this);
         }
         else if (self.gameObject.CompareTag("EnemyWater"))
         {
             type = 3;
-        }
+            //fps.addEnemyPaintings(this);
+        }*/
     }
 
     // Update is called once per frame
@@ -40,6 +48,22 @@ public class EPaintings : MonoBehaviour
     public void resetAttackk()
     {
         fps.resetEattackReset();
+    }
+    public void Attack()
+    {
+        /*switch (type)
+        {
+            case 1:
+                eAttackF.SetTrigger("Fired");
+                break;
+            case 2:
+                eAttackI.SetTrigger("Fired");
+                break;
+            case 3:
+                eAttackW.SetTrigger("Fired");
+                break;
+        }*/
+        selfAnimation.SetTrigger("Fired");
     }
     
 }

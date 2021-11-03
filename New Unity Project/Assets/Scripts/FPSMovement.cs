@@ -8,7 +8,8 @@ public class FPSMovement : MonoBehaviour
 {
     public BoxCollider WinCondition;
     public Material pAttackMaterial;
-    public Animator pAttack,eAttackF,eAttackI,eAttackW;
+    public Animator pAttack;
+    public List<EPaintings> enemyF, enemyI, enemyW;
     public GameObject PlayerAttack, ScoreKeeper;
     private Color FireWeaponBase, FireweaponSelected, IceWeaponBase, IceWeaponSelected, WaterWeaponBase, WaterWeaponSelected;
     private Color FireDemonBase, FireDemonSelected, SnowGolemBase, SnowgolemSelected, KrakenBase, KrakenSelected;
@@ -24,6 +25,9 @@ public class FPSMovement : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        enemyF = new List<EPaintings>();
+        enemyI = new List<EPaintings>();
+        enemyW = new List<EPaintings>(); 
         weaponSelected = 0;
         enemySelected = 0;
         ScoreKeeper = GameObject.Find("ScoreKeeper");
@@ -137,12 +141,17 @@ public class FPSMovement : MonoBehaviour
                 switch (enemySelected)
                 {
                     case 1:
-                        eAttackF.SetTrigger("Fired");
+                        //eAttackF.SetTrigger("Fired");
+                        
                         eAttackComplete = false;
                         break;
                     case 2:
+                        //eAttackI.SetTrigger("Fired");
+                        eAttackComplete = false;
                         break;
                     case 3:
+                        //eAttackW.SetTrigger("Fired");
+                        eAttackComplete = false;
                         break;
                 }
             }
@@ -210,5 +219,21 @@ public class FPSMovement : MonoBehaviour
     {
         WinConditionsWater-=1;
     }
+    public void addEnemyPaintings(EPaintings epaint)
+    {
+        if (epaint.CompareTag("EnemyFire"))
+        {
+            enemyF.Add(epaint.GetComponent<EPaintings>());
+        }
+        else if (epaint.CompareTag("EnemyIce"))
+        {
+            enemyI.Add(epaint.GetComponent<EPaintings>());
+        }
+        else if (epaint.CompareTag("EnemyWater"))
+        {
+            enemyW.Add(epaint.GetComponent<EPaintings>());
+        }
+    }
+    
 
 }

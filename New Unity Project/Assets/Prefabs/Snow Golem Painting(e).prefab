@@ -357,6 +357,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 28017738b46fa844382efffd1400c416, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  EnemyPaintingAnimation: {fileID: -3562008184732636999}
+  selfAnimation: {fileID: -3562008184732636999}
   fps: {fileID: 0}
   self: {fileID: 2470999427847702571}
