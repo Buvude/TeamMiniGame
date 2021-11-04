@@ -97,21 +97,21 @@ public class FPSMovement : MonoBehaviour
 
             pAttackMaterial.color = WaterWeaponSelected;
         }
-        if (Input.GetKey(KeyCode.Keypad7)&&ScoreKeeper.GetComponent<ScoreKeeper>().Multiplayer && eAttackComplete)
+        if (Input.GetKey(KeyCode.Keypad7)||Input.GetKey(KeyCode.Alpha7)&&ScoreKeeper.GetComponent<ScoreKeeper>().Multiplayer && eAttackComplete)
         {
             enemySelected = 1;
             FireDemon.color = FireDemonSelected;
             SnowGolem.color = SnowGolemBase;
             Kraken.color = KrakenBase;
         }
-        if (Input.GetKey(KeyCode.Keypad8) && ScoreKeeper.GetComponent<ScoreKeeper>().Multiplayer && eAttackComplete)
+        if (Input.GetKey(KeyCode.Keypad8)||Input.GetKey(KeyCode.Alpha8) && ScoreKeeper.GetComponent<ScoreKeeper>().Multiplayer && eAttackComplete)
         {
             enemySelected = 2;
             FireDemon.color = FireDemonBase;
             SnowGolem.color = SnowgolemSelected;
             Kraken.color = KrakenBase;
         }
-        if (Input.GetKey(KeyCode.Keypad9) && ScoreKeeper.GetComponent<ScoreKeeper>().Multiplayer&&eAttackComplete)
+        if (Input.GetKey(KeyCode.Keypad9)||Input.GetKey(KeyCode.Alpha9) && ScoreKeeper.GetComponent<ScoreKeeper>().Multiplayer&&eAttackComplete)
         {
             enemySelected = 3;
             FireDemon.color = FireDemonBase;
@@ -136,7 +136,7 @@ public class FPSMovement : MonoBehaviour
                     break;
             }
         }
-        if (Input.GetKeyUp(KeyCode.Keypad5) && ScoreKeeper.GetComponent<ScoreKeeper>().Multiplayer && enemySelected != 0 && eAttackComplete)
+        if (Input.GetKey(KeyCode.Keypad5)||Input.GetKey(KeyCode.Alpha5) && ScoreKeeper.GetComponent<ScoreKeeper>().Multiplayer && enemySelected != 0 && eAttackComplete)
         {
             Debug.Log("you made it this far...");
             switch (enemySelected)
