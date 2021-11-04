@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 7115574019870731035}
   - component: {fileID: 1544200049176958042}
   - component: {fileID: 1724102710196110403}
+  - component: {fileID: 2461119922065686829}
   m_Layer: 0
   m_Name: Player Attack
   m_TagString: Player
@@ -129,7 +130,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0014e99dfb671d343b71d8a54e1adaa4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fps: {fileID: 0}
+  fps: {fileID: 5796623565654800395}
+--- !u!114 &2461119922065686829
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4573313701392483039}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7b3c7dc212a48ce4cb14a77bcd1fa057, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fps: {fileID: 5796623565654800395}
 --- !u!1 &5796623564663673857
 GameObject:
   m_ObjectHideFlags: 0
@@ -343,9 +357,9 @@ MonoBehaviour:
   WinCondition: {fileID: 0}
   pAttackMaterial: {fileID: 0}
   pAttack: {fileID: 1544200049176958042}
-  eAttackF: {fileID: -3562008184732636999, guid: cdc9278ef0bee7f4a8eb4f0123e61abf, type: 3}
-  eAttackI: {fileID: -3562008184732636999, guid: 4569cf4e63f132b41838c3be0b1398d5, type: 3}
-  eAttackW: {fileID: -3562008184732636999, guid: b22d7d81ac42682469380b3240cd6b85, type: 3}
+  enemyF: []
+  enemyI: []
+  enemyW: []
   PlayerAttack: {fileID: 4573313701392483039}
   ScoreKeeper: {fileID: 0}
   FireWeapon: {fileID: 0}

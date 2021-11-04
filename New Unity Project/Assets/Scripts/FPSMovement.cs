@@ -146,13 +146,15 @@ public class FPSMovement : MonoBehaviour
                     /*for (int i = 0; i < enemyF.Count; i++)
                     {
                         enemyF[i].GetComponent<EPaintings>().Attack();
-                    }
-                    eAttackComplete = false;*/
+                    }*/
+                    eAttackComplete = false;
                     foreach (GameObject i in enemyF)
                     {
                         i.GetComponent<EPaintings>().Attack();
                     }
+                    eAttackComplete = true;
                     break;
+                    
                 case 2:
                     //eAttackI.SetTrigger("Fired");
                     /*for (int i = 0; i < enemyI.Count; i++)
@@ -160,10 +162,12 @@ public class FPSMovement : MonoBehaviour
                         enemyI[i].GetComponent<EPaintings>().Attack();
                     }
                     eAttackComplete = false;*/
+                    eAttackComplete = false;
                     foreach (GameObject i in enemyI)
                     {
                         i.GetComponent<EPaintings>().Attack();
                     }
+                    eAttackComplete = true;
                     break;
                 case 3:
                     //eAttackW.SetTrigger("Fired");
@@ -171,11 +175,12 @@ public class FPSMovement : MonoBehaviour
                     {
                         enemyW[i].GetComponent<EPaintings>().Attack();
                     }*/
+                    eAttackComplete = false;
                     foreach (GameObject i in enemyW)
                     {
                         i.GetComponent<EPaintings>().Attack();
                     }
-                    eAttackComplete = false;
+                    eAttackComplete = true;
                     break;
             }
         }
@@ -224,11 +229,11 @@ public class FPSMovement : MonoBehaviour
     {
         return weaponSelected;
     }
-    public void setWinConditions(int fire, int water, int ice)
+    public void setWinConditions()
     {
-        WinConditionsFire = fire;
-        WinConditionsWater = water;
-        WinconditionsIce = ice;
+        WinConditionsFire = SceneManager.GetActiveScene().buildIndex;
+        WinConditionsWater = SceneManager.GetActiveScene().buildIndex;
+        WinconditionsIce = SceneManager.GetActiveScene().buildIndex;
     }
     public void FireDown()
     {
